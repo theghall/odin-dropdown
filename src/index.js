@@ -8,4 +8,4 @@ require('normalize.css');
 import './assets/css/style.scss';
 /* eslint-enable import/first */
 
-gotoMenu.addMenuListeners('click');
+gotoMenu.navControl('click');

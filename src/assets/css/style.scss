@@ -12,6 +12,9 @@ $textColor: #000;
 /* Thanks to Una Kravets for her post on CSS Tricks
  * Solved With CSS! Dropdown Menus
  * https://css-tricks.com/solved-with-css-dropdown-menus/
+ * Also thanks to Todd Moto for his post on a jquery 
+ * solution with css fallback
+ * https://toddmotto.com/flawless-clickable-drop-down-navigation/
  */
 
 
@@ -45,7 +48,7 @@ $textColor: #000;
 	padding-left: 0;
 }
 
-.goto-menu {
+.goto-nav {
 
   a {
    text-decoration: none;
@@ -60,7 +63,7 @@ $textColor: #000;
   	position: relative;
   	text-decoration: none;
   }
-  
+
   li a {
    color: $textColor;
   }
@@ -72,24 +75,25 @@ $textColor: #000;
 
   .goto-submenu {
   	background: $normalBackground;
-  	visibility: hidden;
-    opacity: 0;
     min-width: 5rem;
   	position: absolute;
     margin-top: 1rem;
   	left: 0;
+  }
+
+  .goto-js .goto-submenu,
+  .goto-css .goto-submenu {
+    visibility: hidden;
+    opacity: 0;
     display: none;
   }
 
-  /* TODO: for css fallback
-  li:hover > .goto-submenu,
-  li .goto-submenu:hover {
-   visibility: visible;
-   opacity: 1;
-   display: block;
+  .goto-css li:hover > .goto-submenu,
+  .goto-css li .goto-submenu:hover {
+     visibility: visible;
+     opacity: 1;
+     display: block;
   }
-  */
-
 
   li .goto-submenu li {
   	clear: both;

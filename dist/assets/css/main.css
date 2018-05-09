@@ -303,6 +303,9 @@ template {
 /* Thanks to Una Kravets for her post on CSS Tricks
  * Solved With CSS! Dropdown Menus
  * https://css-tricks.com/solved-with-css-dropdown-menus/
+ * Also thanks to Todd Moto for his post on a jquery 
+ * solution with css fallback
+ * https://toddmotto.com/flawless-clickable-drop-down-navigation/
  */
 .goto-font1 {
   font-family: Arial, sans-serif; }
@@ -328,41 +331,46 @@ template {
   margin: 0;
   padding-left: 0; }
 
-.goto-menu {
-  /* TODO: for css fallback
-  li:hover > .goto-submenu,
-  li .goto-submenu:hover {
-   visibility: visible;
-   opacity: 1;
-   display: block;
-  }
-  */ }
-  .goto-menu a {
-    text-decoration: none; }
-  .goto-menu li {
-    color: #000;
-    background: lightgray;
-    display: block;
-    float: left;
-    padding: 1rem;
-    position: relative;
-    text-decoration: none; }
-  .goto-menu li a {
-    color: #000; }
-  .goto-menu li:hover {
-    background: darkgrey;
-    cursor: pointer; }
-  .goto-menu .goto-submenu {
-    background: lightgray;
-    visibility: hidden;
-    opacity: 0;
-    min-width: 5rem;
-    position: absolute;
-    margin-top: 1rem;
-    left: 0;
-    display: none; }
-  .goto-menu li .goto-submenu li {
-    clear: both;
-    width: 100%; }
+.goto-nav a {
+  text-decoration: none; }
+
+.goto-nav li {
+  color: #000;
+  background: lightgray;
+  display: block;
+  float: left;
+  padding: 1rem;
+  position: relative;
+  text-decoration: none; }
+
+.goto-nav li a {
+  color: #000; }
+
+.goto-nav li:hover {
+  background: darkgrey;
+  cursor: pointer; }
+
+.goto-nav .goto-submenu {
+  background: lightgray;
+  min-width: 5rem;
+  position: absolute;
+  margin-top: 1rem;
+  left: 0; }
+
+.goto-nav .goto-js .goto-submenu,
+.goto-nav .goto-css .goto-submenu {
+  visibility: hidden;
+  opacity: 0;
+  display: none; }
+
+.goto-nav .goto-css li:hover > .goto-submenu,
+.goto-nav .goto-css li .goto-submenu:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block; }
+
+.goto-nav li .goto-submenu li {
+  clear: both;
+  width: 100%; }
 
 /* ==================== End style.css =======================*/

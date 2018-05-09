@@ -1,7 +1,10 @@
 const gotoMenuClasses = {
-  menuClass: 'goto-menu',
-  subMenuClass: 'goto-submenu',
+  cssClass: 'goto-css',
   dispSubMenu: 'goto-drop',
+  jsClass: 'goto-js',
+  menuClass: 'goto-menu',
+  navClass: 'goto-nav',
+  subMenuClass: 'goto-submenu',
 };
 
 const gotoMenuCore = {
@@ -32,7 +35,18 @@ const gotoMenuCore = {
     elem.addEventListener(trigger, gotoMenuCore.toggleSubMenu);
   },
 
-  addListeners(trigger = 'click') {
+  hideSubMenus() {
+    const menus = document.getElementsByClassName(gotoMenuClasses.menuClass);
+
+    for (let menuIndex = 0; menuIndex < menus.length; menuIndex += 1) {
+      // Make CSS hide submenus
+      menus[menuIndex].classList.toggle(gotoMenuClasses.jsClass);
+      // Turn off CSS fallback
+      menus[menuIndex].classList.toggle(gotoMenuClasses.cssClass);
+    }
+  },
+
+  addListeners(trigger) {
     // Grab all menus
     const menus = document.querySelectorAll('li > ul');
 
@@ -44,7 +58,9 @@ const gotoMenuCore = {
 };
 
 const gotoMenu = {
-  addMenuListeners(trigger) {
+
+  navControl(trigger = 'click') {
+    gotoMenuCore.hideSubMenus();
     gotoMenuCore.addListeners(trigger);
   },
 };
