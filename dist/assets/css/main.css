@@ -364,6 +364,7 @@ template {
   display: none; }
 
 .goto-nav .goto-css li:hover > .goto-submenu,
+.goto-nav .goto-css li:focus-within > .goto-submenu,
 .goto-nav .goto-css li .goto-submenu:hover {
   visibility: visible;
   opacity: 1;

@@ -89,6 +89,7 @@ $textColor: #000;
   }
 
   .goto-css li:hover > .goto-submenu,
+  .goto-css li:focus-within > .goto-submenu,
   .goto-css li .goto-submenu:hover {
      visibility: visible;
      opacity: 1;
@@ -101,4 +102,3 @@ $textColor: #000;
   }
 }
 /* ==================== End style.css =======================*/
-
