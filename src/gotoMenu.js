@@ -27,7 +27,8 @@ const gotoMenuCore = {
     if (gotoMenuCore.isMenuItem(target)) return;
     // Either LI or A
     const subMenu = (tag === 'LI' ? target.children[1] : target.parentNode.children[1]);
-    gotoMenuCore.closeActiveMenu();
+    // If target is active then we toggle if off on following line
+    if (!subMenu.classList.contains(gotoMenuClasses.dispSubMenu)) gotoMenuCore.closeActiveMenu();
     subMenu.classList.toggle(gotoMenuClasses.dispSubMenu);
   },
 
