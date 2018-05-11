@@ -296,7 +296,7 @@ template {
  */
 [hidden] {
   display: none; }
-/* ==================== Begin style.css =======================*/
+/* ==================== Begin goto-style.css =======================*/
 * {
   box-sizing: border-box; }
 
@@ -374,4 +374,4 @@ template {
   clear: both;
   width: 100%; }
 
-/* ==================== End style.css =======================*/
+/* ==================== End goto-style.css =======================*/

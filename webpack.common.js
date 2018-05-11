@@ -21,6 +21,9 @@ module.exports = {
 	   }
      ]
    },
+   resolve: {
+     symlinks: false
+   },
    plugins: [
 	 ExtractSass
    ]
