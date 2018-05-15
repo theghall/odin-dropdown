@@ -331,6 +331,12 @@ template {
   margin: 0;
   padding-left: 0; }
 
+.goto-nav {
+  height: 35px;
+  width: 100%;
+  background: lightgray;
+  display: block; }
+
 .goto-nav a {
   text-decoration: none; }
 
@@ -339,22 +345,25 @@ template {
   background: lightgray;
   display: block;
   float: left;
-  padding: 1rem;
+  min-width: 5rem;
   position: relative;
   text-decoration: none; }
 
 .goto-nav li a {
-  color: #000; }
+  color: #000;
+  height: 35px;
+  width: 100px;
+  line-height: 35px; }
 
 .goto-nav li:hover {
   background: darkgrey;
   cursor: pointer; }
 
+.goto-nav .more-menu {
+  display: none; }
+
 .goto-nav .goto-submenu {
-  background: lightgray;
-  min-width: 5rem;
   position: absolute;
-  margin-top: 1rem;
   left: 0; }
 
 .goto-nav .goto-js .goto-submenu,
@@ -370,8 +379,27 @@ template {
   opacity: 1;
   display: block; }
 
-.goto-nav li .goto-submenu li {
-  clear: both;
-  width: 100%; }
+/* Media queries */
+@media only screen and (max-width: 550px) {
+  .goto-nav li {
+    padding: 0;
+    clear: left; }
+  .goto-nav .goto-menu {
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+    position: absolute;
+    left: 0; }
+  .goto-nav .goto-submenu {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-align: center; }
+  .goto-nav .more-menu {
+    display: block; }
+  .goto-nav:hover .goto-menu {
+    visibility: visible;
+    opacity: 1;
+    display: block; } }
 
 /* ==================== End goto-style.css =======================*/
